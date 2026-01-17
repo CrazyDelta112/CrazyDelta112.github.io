@@ -1,0 +1,178 @@
+<!-- Styles from the FanMade Website / Retirado do Website FanMade -->
+<!-- This pages css is MainMenu.css / O CSS desta página é MainMenu.css -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cod-Hub is a Call of Duty community website focused on distributing help and recent Call of Duty builds (We are not affiliated with Activision).">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <link rel="stylesheet" href="Pages/CSS/MainMenu.css">
+    <title>Cod-Hub | Home</title>
+    <script src="bg-randomizer.js"></script>
+</head>
+
+<body>
+    <!-- Randomized Background / Plano de fundo aleatório -->
+    <div class="background-blur">
+		<img src="Images/Background.webp" alt="" class="bg-full">
+    </div>
+
+    <div class="container">
+        <nav class="navbar glass">
+            <a class="brand" href="index.html">
+                <img src="Images/Logo.png" alt="Cod-Hub Logo" class="logo">
+            </a>
+            <ul>
+                <li><a class="active" href="MainMenu.html">Home</a></li>
+                <li><a href="downloads.html">IW8-Mod</a></li>
+                <li><a href="infos.html">Lumen</a></li>
+                <li><a href="redacted.html">Infos</a></li>
+                <li><a href="dc-servers.html">Discords</a></li>
+                <li><a href="credits.html">Credits</a></li>
+                <li><a href="otherstuff.html">More..</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="hero-section glass">
+                <img src="Images/Main-Page-Logo.png" alt="CodHub Logo" class="hero-logo">
+                <h1>Welcome to CodHub</h1>
+                <p class="hero-tagline">Your ultimate source for Call of Duty Infos, mods, and community resources</p>
+            </section>
+
+            <section class="featured-links glass">
+                <h2>Featured Links</h2>
+                <ul>
+                    <li>
+                        <a href="downloads.html">IW8-Mod</a>
+                        <span>Get the latest Call of Duty builds and updates</span>
+                    </li>
+                    <li>
+                        <a href="infos.html">Lumen</a>
+                        <span>Important information and comprehensive guides</span>
+                    </li>
+                    <li>
+                        <a href="otherstuff.html">More..</a>
+                        <span>Explore additional content and community features</span>
+                    </li>
+                </ul>
+            </section>
+
+            
+
+            <!-- Daily COD quote / Citação diária do COD -->
+            <section class="quote-section glass">
+                <div id="cod-quote">Loading quote...</div>
+                <div id="cod-quote-meta"></div>
+            </section>
+
+            <footer class="footer glass">
+                <div class="version-info">
+                   	<span style=color:aliceblue>Version: 2.0</span>
+					<span>||</span>
+					<span style=color:aliceblue>GitHub Public Version Release</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Daily quote system / Sistema de citação diária
+        const codPhrases = [
+            { text: "You're all on my team, nobody fights alone.", author: "Ghost", year: "2022" },
+            { text: "Hijo de puta.", author: "Alejandro", year: "2022" },
+            { text: "Betrayal by a friend always hurts..", author: "Ghost", year: "2022" },
+            { text: "Remember, No Russian..", author: "Vladimir Makarov", year: "2016" },
+            { text: "Dragovich, Kravchenko, Steiner, they all must die..", author: "Viktor Reznov", year: "1963" },
+            { text: "Victory cannot be achieved without sacrifice.", author: "Viktor Reznov", year: "1963" },
+            { text: "To know you're close to the end is a kind of freedom. Good time to take... inventory.", author: "Captain Price", year: "2019"},
+            { text: "The numbers, Mason! What do they mean?", author: "Jason Hudson", year: "Unknown Date" },
+            { text: "Fifty-thousand people used to live here. Now it's a ghost town.", author: "Captain MacMillan", year: "1996" },
+            { text: "Bishop Takes Rook", author: "Russell Adler", year: "1991" },
+            { text: "My name is Viktor Reznov, and I will have my revenge!", author: "Viktor Reznov", year: "1963" }
+        ];
+
+        // Seeded random number generator / Gerador de números aleatórios com seed
+        function mulberry32(seed) {
+            return function () {
+                let t = seed += 0x6D2B79F5;
+                t = Math.imul(t ^ t >>> 15, t | 1);
+                t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+                return ((t ^ t >>> 14) >>> 0) / 4294967296;
+            }
+        }
+
+        // Get phrase based on current date / Obtém frase baseada na data atual
+        function getDailyPhrase() {
+            const now = new Date();
+            const seed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+            const rng = mulberry32(seed);
+            const index = Math.floor(rng() * codPhrases.length);
+            return codPhrases[index];
+        }
+
+        // Display quote on page / Exibir citação na página
+        function showDailyCODQuote() {
+            const p = getDailyPhrase();
+            document.getElementById("cod-quote").textContent = `"${p.text}"`;
+            document.getElementById("cod-quote-meta").textContent = `— ${p.author} • ${p.year}`;
+        }
+
+        showDailyCODQuote();
+
+        // Mouse tilt effect / Efeito de inclinação com mouse
+        document.querySelectorAll('.glass').forEach(el => {
+            let isHovering = false;
+            let animationFrame = null;
+            let animationCompleted = false;
+
+            el.addEventListener('animationend', () => {
+                animationCompleted = true;
+            });
+
+            el.addEventListener('mouseenter', () => {
+                isHovering = true;
+                if (animationCompleted) {
+                    el.classList.add('hover-active');
+                }
+            });
+
+            el.addEventListener('mousemove', e => {
+                if (!isHovering) return;
+
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+
+                animationFrame = requestAnimationFrame(() => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+
+                    const xRatio = Math.max(-0.8, Math.min(0.8, (x - centerX) / centerX));
+                    const yRatio = Math.max(-0.8, Math.min(0.8, (y - centerY) / centerY));
+
+                    const rotateX = -yRatio * 3;
+                    const rotateY = xRatio * 3;
+
+                    el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+            });
+
+            el.addEventListener('mouseleave', () => {
+                isHovering = false;
+                if (animationFrame) {
+                    cancelAnimationFrame(animationFrame);
+                }
+                el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+/* Global */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* reset */
+    background-color: #000;
+}
+
+/* Games */
+
+.games {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+/* Game */
+
+.game {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20vh;
+    justify-content: center;
+    flex: 2;
+    width: 100%;
+    height: 100%;
+    transition: flex 0.4s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: grayscale(50%) blur(5px);
+    will-change: flex, background-color;
+}
+
+.game.is-active {
+    flex: 3;
+    background-color: transparent;
+    backdrop-filter: none;
+}
+
+.game.is-active::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 70%;
+    top: 15%;
+    left: -3px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+.game.is-active::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 70%;
+    top: 15%;
+    right: -3px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+}
+
+/* Game image */
+
+.game__image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.game__image--left {
+    object-position: left center;
+    transform-origin: left center;
+}
+
+.game__image--center {
+    object-position: center center;
+    transform-origin: center center;
+}
+
+.game__image--right {
+    object-position: right center;
+    transform-origin: right center;
+}
+
+.game .game__image {
+    opacity: 0;
+    transform: scale(1.03);
+    transition: transform 0s linear;
+    will-change: transform;
+}
+
+.game.is-active .game__image {
+    opacity: 1;
+    transform: scale(1);
+    transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Logo */
+
+.logo {
+    height: calc(24px + 5.5vw);
+    margin-bottom: 10vh;
+    fill: #fff;
+    fill-rule: evenodd;
+    opacity: 0.18;
+    transition: opacity 0s linear;
+}
+
+.logo2 {
+    height: calc(80px + 5.5vw);
+    margin-bottom: 10vh;
+    fill: #fff;
+    fill-rule: evenodd;
+    opacity: 0.18;
+    transition: opacity 0s linear;
+}
+.game.is-active .logo2 {
+    opacity: 1;
+    transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.game.is-active .logo {
+    opacity: 1;
+    transition: opacity 0.15s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Play button */
+
+.play-button {
+    display: inline-block;
+    width: calc(150px + 10vw);
+    padding: 2px 24px;
+    border: none;
+    /* reset */
+    border-top: 2px solid rgba(201, 197, 195, 0);
+    border-bottom: 2px solid rgba(201, 197, 195, 0);
+    border-radius: px;
+    box-shadow: none;
+    background: transparent;
+    color: transparent;
+    text-align: center;
+    font-family: "CW";
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* reset */
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(2px);
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.play-button:hover {
+    opacity: 1;
+    color: #202020;
+    border-top: 2px solid rgba(201, 197, 195, 0.5);
+    border-bottom: 2px solid rgba(201, 197, 195, 0.5);
+    background: linear-gradient(to right,
+            rgba(201, 197, 195, 0.8) 0%,
+            rgba(211, 207, 206, 0.85) 3%,
+            rgba(228, 226, 227, 0.9) 30%,
+            rgba(228, 226, 227, 0.9) 70%,
+            rgba(211, 207, 206, 0.85) 90%,
+            rgba(201, 197, 195, 0.8) 100%);
+    transform: translateY(0);
+}
+
+.game.is-active .play-button {
+    opacity: 1;
+    color: #ffffff;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.game.is-active .play-button:hover {
+    opacity: 1;
+    color: #000000;
+    border-top: 2px solid rgba(201, 197, 195, 0.5);
+    border-bottom: 2px solid rgba(201, 197, 195, 0.5);
+    background: linear-gradient(to right,
+            rgba(201, 197, 195, 0.8) 0%,
+            rgba(211, 207, 206, 0.85) 3%,
+            rgba(228, 226, 227, 0.9) 30%,
+            rgba(228, 226, 227, 0.9) 70%,
+            rgba(211, 207, 206, 0.85) 90%,
+            rgba(201, 197, 195, 0.8) 100%);
+    transform: translateY(-3px);
+}
+@font-face {
+    font-family: 'MW';
+    src: url('fonts/modernwarfare.ttf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MWIII';
+    src: url('fonts/hitmarkertext-bold.ttf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'CW';
+    src: url('fonts/coldwar.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+/* eeffoc */

@@ -1,0 +1,211 @@
+<!-- Styles from the FanMade Website / Retirado do Website FanMade -->
+<!-- This pages css is MainMenu.css / O CSS desta página é MainMenu.css -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cod-Hub is a Call of Duty community website focused on distributing help and recent Call of Duty builds (We are not affiliated with Activision).">
+    <link rel="icon" type="image/png" href="Images/Icon.png">
+    <link rel="stylesheet" href="Pages/CSS/Vnext.css">
+    <title>Cod-Hub | IW8-Mod</title>
+    <script src="bg-randomizer.js"></script>
+</head>
+
+<body>
+    <!-- Randomized Background / Plano de fundo aleatório -->
+    <div class="background-blur">
+        <img src="Images/Background.webp" alt="" class="bg-full">
+    </div>
+
+    <div class="container">
+        <nav class="navbar glass">
+            <a class="brand" href="index.html">
+                <img src="Images/Logo.png" alt="Cod-Hub Logo" class="logo">
+            </a>
+            <ul>
+                <li><a href="MainMenu.html">Home</a></li>
+                <li><a class="active" href="Vnext.html">IW8-Mod</a></li>
+                <li><a href="infos.html">Lumen</a></li>
+                <li><a href="redacted.html">Infos</a></li>
+                <li><a href="dc-servers.html">Discords</a></li>
+                <li><a href="credits.html">Credits</a></li>
+                <li><a href="otherstuff.html">More..</a></li>
+            </ul>
+        </nav>
+
+
+        <main class="content">
+
+            <!-- HERO / INTRO -->
+            <section class="hero-section glass">
+                <img src="Images/source.gif" alt="IW8 Engine Logo" class="hero-logo">
+                <h1>IW8-MOD</h1>
+                <p class="hero-tagline">
+                    IW8-Mod is a Mod Made For <b>Modern Warfare 2019</b> And Allow You Play Almost Every Single Version Of Modern Warfare And Warzone (2020).
+                </p>
+            </section>
+
+            <!-- O QUE É IW8 -->
+            <section class="featured-links glass">
+                <h2>Infos</h2>
+
+                <ul>
+                    <li>
+                        <a>Infinity Ward Engine 8.0</a>
+                        <span>
+                            IW8 is the graphics and logic engine used in Call of Duty:
+
+Modern Warfare (2019) and Warzone. It features a new system
+
+for rendering, asset streaming, and a modern pipeline.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Features</a>
+                        <span>
+                            With IW8-Mod You Can Play Offline With Every Single Game Mode Available In Modern Warfare And Warzone (2020) Including Campaign, Multiplayer, Spec Ops And Warzone.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>L.A.N (Not Released)</a>
+                        <span>
+                            IW8-Mod Team Is Working On A LAN Feature To Allow Players Play With Their Friends In Local Area Network, This Feature Is Still In Development And Not Released Yet.
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- MOTD / FEATURE -->
+            <section class="motd glass">
+
+                <div class="motd-body">
+                    <div class="motd-left">
+                        <h2>IW8 MODDING & RESEARCH</h2>
+                        <p>
+                            Esta página documenta descobertas técnicas, sistemas internos,
+                            formatos de arquivos, UI, scripting e comportamento do motor IW8.
+                            Todo o conteúdo é educacional e voltado para aprendizado técnico.
+                        </p>
+                        <span class="motd-action">› Engenharia reversa • UI • Assets • Hooks</span>
+                    </div>
+
+                    <div class="motd-right">
+                        <img src="Images/hq720.jpg" alt="IW8 Preview">
+                    </div>
+                </div>
+
+                <div class="motd-footer">
+                    <div class="motd-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SISTEMAS DO IW8 -->
+            <section class="featured-links glass">
+                <h2>Sistemas Principais</h2>
+
+                <ul>
+                    <li>
+                        <a>LUI / UI System</a>
+                        <span>
+                            Interface baseada em Lua + LUI, com carregamento dinâmico,
+                            layouts modulares e forte integração com o engine.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Asset Streaming</a>
+                        <span>
+                            Sistema de streaming agressivo para mapas gigantes,
+                            carregando texturas, modelos e colisões sob demanda.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Pacotes Proprietários</a>
+                        <span>
+                            Assets armazenados em formatos fechados (.ff, .pak, caches),
+                            exigindo análise e ferramentas específicas.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Networking & Live Service</a>
+                        <span>
+                            Engine projetada desde o início para integração online,
+                            matchmaking, playlists dinâmicas e atualizações frequentes.
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- MODDING -->
+            <section class="featured-links glass">
+                <h2>Modding no IW8</h2>
+
+                <ul>
+                    <li>
+                        <a>UI Mods</a>
+                        <span>
+                            Modificação de menus, HUDs e telas via arquivos Lua
+                            carregados pelo sistema LUI.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Hooks & Injeção</a>
+                        <span>
+                            Uso de hooks em funções internas para alterar
+                            comportamento do jogo, debug e pesquisa.
+                        </span>
+                    </li>
+
+                    <li>
+                        <a>Ferramentas Custom</a>
+                        <span>
+                            Desenvolvimento de loaders, dumpers, parsers e
+                            utilitários para explorar o motor.
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- DISCLAIMER -->
+            <section class="quote-section glass">
+                <div id="cod-quote">
+                    “Este projeto não é afiliado à Activision ou Infinity Ward.
+                    Todo o conteúdo é educacional e voltado para pesquisa técnica.”
+                </div>
+                <div id="cod-quote-meta">
+                    Cod-Hub • IW8-Mod Research
+                </div>
+            </section>
+
+        </main>
+
+
+
+
+
+
+
+
+
+
+        <footer class="footer glass">
+            <div class="version-info">
+                <span style=color:aliceblue>Version: 2.0</span>
+                <span>||</span>
+                <span style=color:aliceblue>GitHub Public Version Release</span>
+            </div>
+        </footer>
+        </main>
+    </div>

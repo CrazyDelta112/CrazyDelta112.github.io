@@ -17,7 +17,7 @@
 <body>
     <!-- Randomized Background / Plano de fundo aleatório -->
     <div class="background-blur">
-		<img src="Images/Background.webp" alt="" class="bg-full">
+        <img src="Images/Background.webp" alt="" class="bg-full">
     </div>
 
     <div class="container">
@@ -27,14 +27,92 @@
             </a>
             <ul>
                 <li><a class="active" href="MainMenu.html">Home</a></li>
-                <li><a href="downloads.html">IW8-Mod</a></li>
-                <li><a href="infos.html">Lumen</a></li>
-                <li><a href="redacted.html">Infos</a></li>
-                <li><a href="dc-servers.html">Discords</a></li>
+                <li><a href="#">Unavailable</a></li>
+                <li><a href="#">Unavailable</a></li>
+                <li><a href="redacted.html">Unavailable</a></li>
+                <li><a href="#">Unavailable</a></li>
                 <li><a href="credits.html">Credits</a></li>
-                <li><a href="otherstuff.html">More..</a></li>
+                <li><a href="#">Unavailable..</a></li>
             </ul>
         </nav>
+
+
+        <section class="motd glass">
+            <div class="motd-header">
+                MESSAGE OF THE DAY
+            </div>
+
+            <div class="motd-body">
+                <div class="motd-left">
+                    <h2 id="motd-title">GROUND WAR COMING SOON</h2>
+
+                    <p id="motd-desc">
+                        Thank you for playing the Call of Duty: Modern Warfare Beta.
+                        We hope you're enjoying everything we’ve shown you so far.
+                        <br><br>
+                        This weekend, experience massive 32v32 combat on a brand new map.
+                    </p>
+
+                    <span class="motd-action"></span>
+                </div>
+
+                <div class="motd-right">
+                    <img id="motd-image" src="Images/motd4-main.jpg" height="25px">
+                </div>
+            </div>
+
+            <div class="motd-footer">
+                <div class="motd-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <div class="motd-thumbs">
+                    <button class="thumb active" data-id="0">
+                        <img src="Images/ui_icon_crm_motd_temp3_s1_bp_operator_showcase_tu_cairo.png">
+                        <div class="thumb-text">
+                            <strong>CodHub GitHub</strong>
+                            <span></span>
+                        </div>
+                        <div class="thumb-bar"></div>
+                    </button>
+
+                    <button class="thumb" data-id="1">
+                        <img src="Images/menu_onboarding_dmz_1.png">
+                        <div class="thumb-text">
+                            <strong>Intel And Infos</strong>
+                            <span></span>
+                        </div>
+                        <div class="thumb-bar"></div>
+                    </button>
+
+                    <button class="thumb" data-id="2">
+                        <img src="Images/motd3.jpg">
+                        <div class="thumb-text">
+                            <strong>LEVEL CAP</strong>
+                            <span>Rank up even further</span>
+                        </div>
+                        <div class="thumb-bar"></div>
+                    </button>
+
+                    <button class="thumb" data-id="3">
+                        <img src="Images/motd4.jpg">
+                        <div class="thumb-text">
+                            <strong>GROUND WAR</strong>
+                            <span>32v32 large-scale combat</span>
+                        </div>
+                        <div class="thumb-bar"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
 
         <main class="content">
             <section class="hero-section glass">
@@ -61,7 +139,7 @@
                 </ul>
             </section>
 
-            
+
 
             <!-- Daily COD quote / Citação diária do COD -->
             <section class="quote-section glass">
@@ -71,9 +149,9 @@
 
             <footer class="footer glass">
                 <div class="version-info">
-                   	<span style=color:aliceblue>Version: 2.0</span>
-					<span>||</span>
-					<span style=color:aliceblue>GitHub Public Version Release</span>
+                    <span style=color:aliceblue>Version: 2.0</span>
+                    <span>||</span>
+                    <span style=color:aliceblue>GitHub Public Version Release</span>
                 </div>
             </footer>
         </main>
@@ -88,7 +166,7 @@
             { text: "Remember, No Russian..", author: "Vladimir Makarov", year: "2016" },
             { text: "Dragovich, Kravchenko, Steiner, they all must die..", author: "Viktor Reznov", year: "1963" },
             { text: "Victory cannot be achieved without sacrifice.", author: "Viktor Reznov", year: "1963" },
-            { text: "To know you're close to the end is a kind of freedom. Good time to take... inventory.", author: "Captain Price", year: "2019"},
+            { text: "To know you're close to the end is a kind of freedom. Good time to take... inventory.", author: "Captain Price", year: "2019" },
             { text: "The numbers, Mason! What do they mean?", author: "Jason Hudson", year: "Unknown Date" },
             { text: "Fifty-thousand people used to live here. Now it's a ghost town.", author: "Captain MacMillan", year: "1996" },
             { text: "Bishop Takes Rook", author: "Russell Adler", year: "1991" },
@@ -171,6 +249,68 @@
                 }
                 el.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
             });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const motdData = [
+                {
+                    title: "CodHub GitHub",
+                    desc: "Welcome to the CodHub. Experience the Infos And Pages Of The Community.   ",
+                    image: "Images/crm_main-1.png"
+                },
+                {
+                    title: "Intel And Informations..",
+                    desc: "Acess The Infos Page Made By Atu,You Can Find Informations For MW,MWII,MWIII  And Warzone ,On The Atlas You warzone commands,guns commands,gamemode commands and etc. Link Here --> ‎ ‎ ‎ https://atuburapaler.github.io/Atlas.html",
+                    image: "Images/ui_icon_crm_motd_temp3_zm_salvage_and_crafting_v3.png"
+                },
+                {
+                    title: "LEVEL CAP INCREASED",
+                    desc: "Progress further with the increased level cap during the beta.",
+                    image: "Images/motd3.jpg"
+                },
+                {
+                    title: "GROUND WAR",
+                    desc: "Experience massive 32v32 combat on a brand new large-scale map.",
+                    image: "Images/motd4-main.jpg"
+                }
+            ];
+
+            const titleEl = document.getElementById("motd-title");
+            const descEl = document.getElementById("motd-desc");
+            const imageEl = document.getElementById("motd-image");
+
+            const dots = document.querySelectorAll(".motd-dots .dot");
+            const thumbs = document.querySelectorAll(".motd-thumbs .thumb");
+
+            if (!titleEl || !descEl || !imageEl || !dots.length || !thumbs.length) {
+                console.error("MOTD: estrutura inválida");
+                return;
+            }
+
+            function setActive(index) {
+                const data = motdData[index];
+                if (!data) return;
+
+                titleEl.textContent = data.title;
+                descEl.innerHTML = data.desc;
+                imageEl.src = data.image;
+
+                dots.forEach((d, i) => d.classList.toggle("active", i === index));
+                thumbs.forEach((t, i) => t.classList.toggle("active", i === index));
+            }
+
+            thumbs.forEach((thumb, index) => {
+                thumb.addEventListener("click", () => setActive(index));
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => setActive(index));
+            });
+
+            // Estado inicial
+            setActive(0);
         });
     </script>
 </body>

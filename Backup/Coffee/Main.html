@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Projects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================= VARIABLES ================= */
+:root{
+  --glass: rgba(18,18,22,.82);
+  --border: rgba(255,255,255,.08);
+  --text: #f4f4f6;
+  --muted: #9ea0aa;
+  --accent: #ff3c3c;
+}
+
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  height:100%;
+}
+
+body{
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--text);
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.bg-wrapper{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  overflow:hidden;
+}
+
+.bg-wrapper video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.35) saturate(1.1);
+}
+
+.bg-overlay{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,60,60,.14), transparent 45%),
+    linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,.9));
+  z-index:-2;
+}
+
+/* ================= HEADER / NAV ================= */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:20;
+  padding:22px clamp(20px,5vw,64px);
+}
+
+nav{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+.logo{
+  height:46px;
+  user-select:none;
+}
+
+/* ================= TRIGGER ================= */
+.project-trigger{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#fff,#777);
+  cursor:pointer;
+  box-shadow:0 0 14px rgba(255,255,255,.45);
+  transition:.25s;
+}
+
+.project-trigger:hover{
+  transform:scale(1.15);
+}
+
+/* ================= DROPDOWN ================= */
+.menu{
+  position: relative;
+}
+
+.menu-trigger{
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.menu-trigger::after{
+  content: "•";
+  margin-left: 10px;
+  color: var(--accent);
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+.dropdown{
+  position: absolute;
+  top: 38px;
+  left: 0;
+
+  background: var(--glass);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px) scale(.97);
+  transition: .25s cubic-bezier(.4,0,.2,1);
+}
+
+.dropdown.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+
+.dropdown button{
+  background:none;
+  border:none;
+  color:var(--text);
+  font-size:.95rem;
+  padding:12px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  text-align:left;
+  transition:.2s;
+}
+
+.dropdown button:hover{
+  background:rgba(255,255,255,.07);
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 clamp(20px,5vw,64px);
+}
+
+.hero-inner{
+  max-width:860px;
+}
+
+.hero h1{
+  font-size:clamp(2.6rem,5vw,4.4rem);
+  font-weight:800;
+  letter-spacing:-0.04em;
+}
+
+.hero p{
+  margin-top:18px;
+  color:var(--muted);
+  font-size:1.1rem;
+  line-height:1.65;
+  max-width:720px;
+}
+
+/* ================= MODAL ================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+  z-index:40;
+}
+
+.modal.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modal-box{
+  position: relative;
+  max-width: 460px;   /* antes 460px */
+  width: 98%;         /* mais responsivo */
+  background: var(--glass);
+  backdrop-filter: blur(28px);
+  border: 1px solid var(--border);
+  border-radius: 18px; /* um pouco menor */
+  padding: 32px;       /* antes 32px */
+  transform: translateY(20px) scale(.95);
+  transition: .35s cubic-bezier(.4,0,.2,1);
+}
+
+
+.modal.active .modal-box{
+  transform:none;
+}
+
+.modal-box img{
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 18px; /* antes 18px */
+}
+
+
+.modal-box h2{
+  font-size: 1.9rem; /* antes 1.9rem */
+  margin-bottom: 8px;
+}
+
+.modal-box p{
+  font-size: 1.05rem; /* antes 1.05rem */
+  line-height: 1.5;
+}
+
+
+.close{
+  position:absolute;
+  top:22px;
+  right:28px;
+  font-size:1.9rem;
+  cursor:pointer;
+  user-select:none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width:600px){
+  .dropdown{
+    left:20px;
+    right:20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg-wrapper">
+  <video autoplay muted loop playsinline>
+    <source src="/CodHub/Pages/Images/Coffee.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="bg-overlay"></div>
+
+<header>
+<nav>
+  <img src="/CodHub/Pages/Images/coffe2.png" class="logo">
+
+  <div class="menu">
+    <button class="menu-trigger" id="trigger">
+      Projects
+    </button>
+
+    <div class="dropdown" id="dropdown">
+      <button data-project="translations">MW PT-BR Translations</button>
+
+    </div>
+  </div>
+</nav>
+
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Coffee Project</h1>
+    <p>
+      Page Still in Development
+    </p>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="close" id="closeModal">×</span>
+    <img id="modalImg" alt="">
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+  </div>
+</div>
+
+
+<script>
+const trigger = document.getElementById('trigger')
+const dropdown = document.getElementById('dropdown')
+const modal = document.getElementById('modal')
+const modalImg = document.getElementById('modalImg')
+const modalTitle = document.getElementById('modalTitle')
+const modalText = document.getElementById('modalText')
+const closeModal = document.getElementById('closeModal')
+
+let open = false
+
+/* Dropdown toggle */
+trigger.addEventListener('click', e => {
+  e.stopPropagation()
+  open = !open
+  dropdown.classList.toggle('show', open)
+})
+
+document.addEventListener('click', () => {
+  open = false
+  dropdown.classList.remove('show')
+})
+
+/* PROJECT DATA */
+const projects = {
+  translations:{
+    title:'Call of Duty Translations',
+    text:'High-quality Portuguese localization for Call of Duty titles without official language support.',
+    img:'/CodHub/Pages/Images/MWTR.png'
+  },
+  codhub:{
+    title:'CodHub Platform',
+    text:'Centralized platform providing Call of Duty versions, documentation, tools and community resources.',
+    img:'images/codhub.jpg'
+  },
+  preservation:{
+    title:'Preservation Initiative',
+    text:'Long-term archival and documentation of legacy Call of Duty builds and internal assets.',
+    img:'images/preservation.jpg'
+  }
+}
+
+/* Open project */
+document.querySelectorAll('.dropdown button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const project = projects[btn.dataset.project]
+
+    modalImg.src = project.img
+    modalTitle.textContent = project.title
+    modalText.textContent = project.text
+
+    modal.classList.add('active')
+    dropdown.classList.remove('show')
+    open = false
+  })
+})
+
+/* Close modal */
+closeModal.addEventListener('click', ()=> modal.classList.remove('active'))
+
+modal.addEventListener('click', e=>{
+  if(e.target === modal){
+    modal.classList.remove('active')
+  }
+})
+
+document.addEventListener('keydown', e=>{
+  if(e.key === 'Escape'){
+    modal.classList.remove('active')
+    dropdown.classList.remove('show')
+    open = false
+  }
+})
+</script>
+
+
+</body>
+</html>

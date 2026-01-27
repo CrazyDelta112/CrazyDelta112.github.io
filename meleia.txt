@@ -1,0 +1,11 @@
+Opa jhonatan olha vou te falar algumas coisas aqui.
+
+vamo começar por coisas do visual studio, eu recomendo se instalar a extensão live-server pra você ter um servidor local do site e não ficar precisando reiniciar.
+
+olha tem coisas importantes marcadas em certas partes do site pra você saber oque é aquilo.
+quando terminar de fazer alguma coisa se pode me enviar no discord se quiser.
+
+a parte de fonts é pra armazenar as fonts no site pra eu conseguir usar elas.
+img tem as imagems do site ent n deleta ela.
+other pages é inutil ent pode apagar dps
+downloads é pra arquivos comprimidos tipo um torrent que tem 36kb

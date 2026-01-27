@@ -1,36 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Loading</title>
-    <link rel="icon" type="image/png" href="/Images/Icon.png">
-    <link rel="stylesheet" href="/CSS/LoadingScreen.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/codstuffserver.png">
+	<title>Cod-Hub|Main Page</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Cod-Hub is a Call of Duty community website focused on distributing help and recent Call of Duty builds  and information(We are not affiliated with Activision).">
+	<link rel="stylesheet" href="styles.css">
 </head>
+<!--Essa é a pagina principa.-->
 <body>
+	<div class="container">
+		<nav class="navbar">
+			<a class="brand" href="index.html">
+				<!--Essa parte img scr="" é a logo que aparece na barra de paginas, é igual em todas as paginas.-->
+				<Img src="img/codhub.png" alt="Cod-Hub Logo" class="logo">
+			</a>
+			<ul>
+				<!--quando alguma pagina estiver com active isso significa que ela vai ficar destacada pra mostrar ao usuario onde ele ta.-->
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="Downloads.html">Downloads</a></li>
+				<li><a href="Infos.html">Infos</a></li>
+				<li><a href="DC-Servers.html">DC-Servers</a></li>
+				<li><a href="ChangeLog.html">ChangeLog</a></li>
+				<li><a href="OtherStuff.html">More..</a></li>
+			</ul>
+		</nav>
 
-    <!-- Fundo com imagem ou vídeo -->
-    <div class="background">
-        <!-- USE ISSO SE FOR IMAGEM -->
-        <!-- <img src="media/bg.jpg" alt="Background"> -->
+		<main class="content">
+			<section class="namer">
+				<!--isso aqui é só uma imagem que eu boto no inicio, ela é a do blackcell mas se quiser tirar ela e botar outra coisa ta dboa -->
+				<section class="goldentitle">
+					<h1>Welcome to CodHub</h1>
+				</section>
+				<p style="color: rgb(255, 255, 255)">Ahh which version is this??</p>
 
-        <!-- USE ISSO SE FOR VÍDEO -->
-        <video autoplay muted loop>
-            <source src="/Pages/Images/Loading.mp4" type="video/mp4">
-        </video>
-    </div>
+				<div>
+					<h2 class="goldentitle">Featured Links</h2>
+					<ul>
+						<li><a href="Downloads.html" style="color: #076aff;">Downloads</a> - Get the latest Call of Duty
+							builds and mods.</li>
+						<li><a href="Infos.html" style="color: #076aff;">Infos</a> - Find tutorials, guides, and
+							community resources.</li>
+						<li><a href="OtherStuff.html" style="color: #076aff;">More..</a> - Explore additional content
+							and community features.</li>
+					</ul>
+				</div>
 
-    <!-- Overlay escuro -->
-    <div class="overlay"></div>
 
-    <!-- Conteúdo -->
-    <div class="loading-container">
-        <div class="loading-bar">
-            <div class="progress"></div>
-        </div>
+			</section>
+			<section class="jc-credits">
+				<p>Website made by delta. Thanks uncrash and Jhonatan for the ideas.</p>
+			</section>
+	
 
-        <p id="status-text">Loading...</p>
-    </div>
 
-    <script src="/JS/LoadingScreen.js"></script>
+
+			</section>
+		</main>
+	</div>
 </body>
+
 </html>
+
+<!--This Copy of 1.6 is only for Joel and Jhonatan-->

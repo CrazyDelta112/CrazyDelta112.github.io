@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading</title>
+    <link rel="icon" type="image/png" href="/Images/Icon.png">
+    <link rel="stylesheet" href="/CSS/LoadingScreen.css">
+</head>
+<body>
+
+    <!-- Fundo com imagem ou vídeo -->
+    <div class="background">
+        <!-- USE ISSO SE FOR IMAGEM -->
+        <!-- <img src="media/bg.jpg" alt="Background"> -->
+ 
+        <!-- USE ISSO SE FOR VÍDEO -->
+        <video autoplay muted loop>
+            <source src="/Pages/Images/Loading.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Overlay escuro -->
+    <div class="overlay"></div>
+
+    <!-- Conteúdo -->
+    <div class="loading-container">
+        <div class="loading-bar">
+            <div class="progress"></div>
+        </div>
+
+        <p id="status-text">Loading...</p>
+    </div>
+
+    <script src="/JS/LoadingScreen.js"></script>
+</body>
+</html>

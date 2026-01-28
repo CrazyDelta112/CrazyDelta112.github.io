@@ -1,0 +1,146 @@
+:root{
+  --glass:rgba(20,20,25,.85);
+  --border:rgba(255,255,255,.12);
+  --text:#f2f2f2;
+  --muted:#a5a5b3;
+  --accent:#ff3c3c;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Inter,system-ui;
+  color:var(--text);
+  background:black;
+  overflow-x:hidden;
+}
+
+/* VIDEO BACKGROUND */
+.bg-wrapper{
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  overflow:hidden;
+}
+.bg-wrapper video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(.4);
+}
+
+/* NAVBAR */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:10;
+  padding:20px 48px;
+}
+nav{
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+}
+.logo{
+  width:44px;
+}
+
+/* PROJECT MENU DOT */
+.project-trigger{
+  margin-left:22px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:white;
+  cursor:pointer;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:72px;
+  left:48px;
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:.25s ease;
+}
+.dropdown.show{
+  opacity:1;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.dropdown button{
+  background:none;
+  border:none;
+  color:var(--text);
+  font-size:.95rem;
+  padding:10px 12px;
+  text-align:left;
+  border-radius:8px;
+  cursor:pointer;
+}
+.dropdown button:hover{
+  background:rgba(255,255,255,.08);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:0 48px;
+}
+.hero-inner{
+  max-width:700px;
+}
+.hero h1{
+  font-size:3.6rem;
+  font-weight:800;
+}
+.hero p{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:1.05rem;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:30;
+}
+.modal.active{display:flex}
+.modal-box{
+  max-width: 300px;
+  padding: 18px;
+}
+
+.modal-box img{
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 12px; /* antes 18px */
+}
+
+.modal-box h2{
+  font-size: 1.5rem; /* antes 1.9rem */
+  margin-bottom: 8px;
+}
+
+.modal-box p{
+  font-size: .95rem; /* antes 1.05rem */
+  line-height: 1.5;
+}

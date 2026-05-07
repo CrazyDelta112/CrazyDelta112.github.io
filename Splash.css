@@ -245,9 +245,39 @@ a {
   text-align: center;
   margin-top: 1rem;
 }
+.ads-section {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ad-bar {
+  flex: 1;                  /* cada barra ocupa metade do espaço */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ad-bar a {
+  display: block;
+}
+
+.ad-bar img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 @media (max-width: 600px) {
   .converter-container {
     padding: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .ads-section {
+    flex-direction: column;
   }
 }
 @font-face {

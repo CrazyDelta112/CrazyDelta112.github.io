@@ -1,23 +1,7 @@
-const IV = 0x10000000233n;
+const IV_TYPE_2 = 0x10000000233n;
 const MASK = 0xFFFFFFFFFFFFFFFFn; // 2^64 - 1
-
-const START_MAP = {
-  'a': 0xE4A68FF7D4912FD2n,
-  'b': 0x35EC9BBDCBCE1C0En,
-  'c': 0xDA27710BE4CE51An,
-  'd': 0x7238A5E2001AEB8En,
-  'f': 0xAF25952FD142C84En,
-  'g': 0xDF9B64790A1B6DB2n,
-  'h': 0xF74A6B45EC63764En,
-  'l': 0xBFF2A0737EB2B2BEn,
-  'm': 0xFBE5EB20A0DF848An,
-  'o': 0xE81A3159054FF1F2n,
-  'p': 0xA3BF3E5BFC4CB65En,
-  'r': 0x251C962D8AB28AEn,
-  's': 0x8913204B4A9FE29An,
-  'u': 0x5221A5281FDEAC5An,
-  'w': 0x62C0087A686DCC32n
-};
+const IW_BASE = 0xD86A3B09566EBAACn;
+const IW_SECURE_KEY = "q6n-+7=tyytg94_*";
 
 function hash64A(str, start, iv) {
   let hash = BigInt(start);
@@ -39,10 +23,8 @@ function hash64A(str, start, iv) {
 
 function hashScrDvar(str) {
   if (!str || str.length === 0) return 0n;
-  let firstChar = str[0].toLowerCase();
-  let start = START_MAP[firstChar];
-  if (start === undefined) return 0n;
-  return hash64A(str, start, IV);
+  let strLower = str.toLowerCase();
+  return hash64A(`${strLower[0]}${IW_SECURE_KEY}${strLower.substring(1)}`, IW_BASE, IV_TYPE_2);
 }
 
 function toHex(value) {

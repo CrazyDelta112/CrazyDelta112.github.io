@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   await loadNavbar();
 
 
-  setBackgroundImage();
 });
 
 // ------------------------------------------------------------
@@ -103,39 +102,5 @@ async function loadNavbar() {
     }
   } catch (error) {
     console.error("ERROR 1102 (Navbar Load Failed):", error);
-  }
-}
-
-
-// ------------------------------------------------------------
-//  Background ( i need to recode this )
-// ------------------------------------------------------------
-function setBackgroundImage() {
-  const backgroundMap = {
-    'Index.html': '/Assets/Images/Main/Background.png',
-    'Patch-Notes.html': '/Assets/Images/Main/Background.png',
-    'GameStorage.html': '/Assets/Images/Main/Background.png',
-    'Mods.html': '/Assets/Images/Main/Background.png',
-    'Community-Post.html': '/Assets/Images/Main/Background.png',
-    'Roadmap.html': '/Assets/Images/Main/Background.png',
-    'Musics.html': '/Assets/Images/Main/Background.png',
-    'About.html': '/Assets/Images/Main/Background.png',
-    'Vehicles.html': '/Assets/Images/Main/Background.png',
-    'Weapons.html': '/Assets/Images/Main/Background.png',
-    default: '/Assets/Images/Main/Background.png'
-  };
-
-  const currentPage = location.pathname.split('/').pop() || 'Index.html';
-  const bgImage = backgroundMap[currentPage] || backgroundMap.default;
-
-  const bgElement = document.querySelector('.bg-full');
-  if (bgElement) {
-    bgElement.src = bgImage;
-    bgElement.onerror = () => {
-      bgElement.src = backgroundMap.default;
-      console.warn(`Background image for ${currentPage} not found, using default.`);
-    };
-  } else {
-    console.warn('Element .bg-full not found');
   }
 }

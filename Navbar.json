@@ -10,7 +10,7 @@
       },
       {
         "label":"Splash Screen",
-        "href":"/index.html"
+        "href":"index.html"
       }
    ]
 }

@@ -1,0 +1,16 @@
+{
+   "brand":{
+      "logo":"Icon.png",
+      "alt":"Fuck you Luka"
+   },
+   "items":[
+      {
+        "label":"Hash",
+         "href":"/Hash.html"
+      },
+      {
+        "label":"Splash Screen",
+        "href":"/Index.html"
+      }
+   ]
+}

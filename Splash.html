@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splash Screen Converter</title>
+    <link rel="stylesheet" href="Main.css" />
+    <link rel="icon" type="image/x-icon" href="/Icon.png" />
+  </head>
+  <body>
+    <div class="background-blur">
+      <img alt="" class="bg-full" />
+    </div>
+
+    <div class="container">
+      <main class="content">
+        <div class="tool-header">
+          <h1>SPLASH SCREEN CONVERTER</h1>
+          <p>
+            Convert any image to Call of Duty splash screen format (843x480,
+            32‑bit BMP)
+          </p>
+        </div>
+
+        <div class="converter-container glass">
+          <div class="upload-area" id="uploadArea">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click or drag and drop an image file</p>
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              style="display: none"
+            />
+          </div>
+
+          <div class="preview-area" id="previewArea" style="display: none">
+            <canvas
+              id="previewCanvas"
+              class="preview-canvas"
+              width="421"
+              height="240"
+            ></canvas>
+          </div>
+
+          <div class="info-text">
+            <p>
+              <i class="fas fa-info-circle"></i> Output format: 843×480 pixels,
+              32‑bit BMP (BGRA). Transparency will be preserved.
+            </p>
+          </div>
+
+          <button id="convertBtn" class="convert-btn" disabled>
+            Convert to Splash BMP
+          </button>
+          <div id="errorMsg" class="error-text"></div>
+          <div
+            id="downloadArea"
+            class="download-area"
+            style="display: none"
+          ></div>
+        </div>
+        <h1 style="text-align: center; font-size: 24px">
+          Other Community Projects
+        </h1>
+
+        <div class="ads-section">
+          <div class="ad-bar glass">
+            <a
+              href="https://atuburapaler.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="News_1.png" />
+            </a>
+          </div>
+          <div class="ad-bar glass">
+            <a
+              href="https://novasix.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src="News_2.png" />
+            </a>
+          </div>
+        </div>
+        <br />
+        <h1 style="text-align: center; font-size: 14px; color: gray">
+          Website Made By Delta
+        </h1>
+      </main>
+    </div>
+
+    <script src="Main.js"></script>
+  </body>
+</html>

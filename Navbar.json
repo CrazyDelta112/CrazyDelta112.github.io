@@ -5,12 +5,16 @@
    },
    "items":[
       {
-        "label":"Hash",
-         "href":"/Hash.html"
+         "label":"Home",
+         "href":"/index.html"
       },
       {
         "label":"Splash Screen",
-        "href":"https://crazydelta112.github.io/"
+         "href":"/Splash.html"
+      },
+      {
+        "label":"Hash",
+        "href":"/Hash.html"
       }
    ]
 }

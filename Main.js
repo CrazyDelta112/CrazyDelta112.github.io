@@ -60,69 +60,11 @@ let lastCbuf = "";
 let recentItems = [];
 const MAX_RECENT = 8;
 
-function addToRecent(dvar, hexHash, cbuf) {
-  recentItems = recentItems.filter(item => item.dvar !== dvar);
-  recentItems.unshift({ dvar, hexHash, cbuf });
-  if (recentItems.length > MAX_RECENT) recentItems.pop();
-  renderRecentList();
-}
-
-function renderRecentList() {
-  if (!recentList) return;
-  if (recentItems.length === 0) {
-    recentList.innerHTML = '<p class="empty-recent">No recent hashes yet.</p>';
-    return;
-  }
-  recentList.innerHTML = recentItems.map(item => `
-    <div class="recent-item" data-dvar="${escapeHtml(item.dvar)}">
-      <div class="recent-dvar">${escapeHtml(item.dvar)}</div>
-      <div class="recent-hash">${escapeHtml(item.hexHash)}</div>
-    </div>
-  `).join('');
-  document.querySelectorAll('.recent-item').forEach(el => {
-    el.addEventListener('click', () => {
-      const dvar = el.dataset.dvar;
-      if (dvar) {
-        dvarInput.value = dvar;
-        handleHash();
-      }
-    });
-  });
-}
-
-function clearRecent() {
-  recentItems = [];
-  renderRecentList();
-}
-
-function updateUI(dvar) {
-  if (!dvar || dvar.trim() === "") {
-    resultArea.style.display = "none";
-    return;
-  }
-  const hash = hashScrDvar(dvar);
-  const hexHash = toHex(hash);
-  const cbuf = toCbufFormat(hexHash);
-  
-  lastHashHex = hexHash;
-  lastCbuf = cbuf;
-  
-  hashResultSpan.textContent = hexHash;
-  cbufResultSpan.textContent = cbuf;
-  resultArea.style.display = "block";
-  
-  if (hash !== 0n && dvar.trim() !== "") {
-    addToRecent(dvar, hexHash, cbuf);
-  }
-}
-function handleHash() {
-  let raw = dvarInput.value.trim();
-  updateUI(raw);
-}
 function escapeHtml(str) {
   if (!str) return '';
   return str.replace(/[&<>]/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[m] || m));
 }
+
 function showTemporaryTooltip(btn, msg) {
   const original = btn.innerHTML;
   btn.innerHTML = `<i class="fas fa-check"></i> ${msg}`;
@@ -130,34 +72,97 @@ function showTemporaryTooltip(btn, msg) {
     btn.innerHTML = original;
   }, 1500);
 }
-hashBtn.addEventListener('click', handleHash);
-dvarInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') handleHash();
-});
-copyHashBtn.addEventListener('click', () => {
-  if (lastHashHex) {
-    navigator.clipboard.writeText(lastHashHex);
-    showTemporaryTooltip(copyHashBtn, "Copied!");
-  }
-});
-copyCbufBtn.addEventListener('click', () => {
-  if (lastCbuf) {
-    navigator.clipboard.writeText(lastCbuf);
-    showTemporaryTooltip(copyCbufBtn, "Copied!");
-  }
-});
-exampleSpan.addEventListener('click', () => {
-  dvarInput.value = "cg_fovScale";
-  handleHash();
-  dvarInput.focus();
-});
-clearRecentBtn.addEventListener('click', () => {
-  clearRecent();
-});
 
-dvarInput.value = "";
-resultArea.style.display = "none";
-renderRecentList();
+if (dvarInput && hashBtn && resultArea && hashResultSpan && cbufResultSpan && copyHashBtn && copyCbufBtn && exampleSpan && recentList && clearRecentBtn) {
+  function addToRecent(dvar, hexHash, cbuf) {
+    recentItems = recentItems.filter(item => item.dvar !== dvar);
+    recentItems.unshift({ dvar, hexHash, cbuf });
+    if (recentItems.length > MAX_RECENT) recentItems.pop();
+    renderRecentList();
+  }
+
+  function renderRecentList() {
+    if (recentItems.length === 0) {
+      recentList.innerHTML = '<p class="empty-recent">No recent hashes yet.</p>';
+      return;
+    }
+    recentList.innerHTML = recentItems.map(item => `
+      <div class="recent-item" data-dvar="${escapeHtml(item.dvar)}">
+        <div class="recent-dvar">${escapeHtml(item.dvar)}</div>
+        <div class="recent-hash">${escapeHtml(item.hexHash)}</div>
+      </div>
+    `).join('');
+    document.querySelectorAll('.recent-item').forEach(el => {
+      el.addEventListener('click', () => {
+        const dvar = el.dataset.dvar;
+        if (dvar) {
+          dvarInput.value = dvar;
+          handleHash();
+        }
+      });
+    });
+  }
+
+  function clearRecent() {
+    recentItems = [];
+    renderRecentList();
+  }
+
+  function updateUI(dvar) {
+    if (!dvar || dvar.trim() === "") {
+      resultArea.style.display = "none";
+      return;
+    }
+    const hash = hashScrDvar(dvar);
+    const hexHash = toHex(hash);
+    const cbuf = toCbufFormat(hexHash);
+    
+    lastHashHex = hexHash;
+    lastCbuf = cbuf;
+    
+    hashResultSpan.textContent = hexHash;
+    cbufResultSpan.textContent = cbuf;
+    resultArea.style.display = "block";
+    
+    if (hash !== 0n && dvar.trim() !== "") {
+      addToRecent(dvar, hexHash, cbuf);
+    }
+  }
+
+  function handleHash() {
+    let raw = dvarInput.value.trim();
+    updateUI(raw);
+  }
+
+  hashBtn.addEventListener('click', handleHash);
+  dvarInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') handleHash();
+  });
+  copyHashBtn.addEventListener('click', () => {
+    if (lastHashHex) {
+      navigator.clipboard.writeText(lastHashHex);
+      showTemporaryTooltip(copyHashBtn, "Copied!");
+    }
+  });
+  copyCbufBtn.addEventListener('click', () => {
+    if (lastCbuf) {
+      navigator.clipboard.writeText(lastCbuf);
+      showTemporaryTooltip(copyCbufBtn, "Copied!");
+    }
+  });
+  exampleSpan.addEventListener('click', () => {
+    dvarInput.value = "cg_fovScale";
+    handleHash();
+    dvarInput.focus();
+  });
+  clearRecentBtn.addEventListener('click', () => {
+    clearRecent();
+  });
+
+  dvarInput.value = "";
+  resultArea.style.display = "none";
+  renderRecentList();
+}
 
 
 //  Navbar

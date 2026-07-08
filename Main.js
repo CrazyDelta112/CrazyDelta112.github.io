@@ -261,7 +261,6 @@ async function loadNavbar() {
   }
 }
 
-// Splash
     const TARGET_WIDTH = 843;
     const TARGET_HEIGHT = 480;
     const PREVIEW_WIDTH = 421;

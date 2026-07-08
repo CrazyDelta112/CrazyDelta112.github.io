@@ -660,10 +660,6 @@ a {
   height: auto;
   display: block;
 }
-
-/* ===========================================
-   RESPONSIVIDADE
-   =========================================== */
 @media (max-width: 600px) {
   .converter-container {
     padding: 1rem;
@@ -709,8 +705,6 @@ a {
     width: auto;
     animation: logoFloat 3s ease-in-out infinite, logoPulse 4s ease-in-out infinite;
 }
-
-/* Animações da logo (caso não estejam no MainMenu.css) */
 @keyframes logoFloat {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
@@ -744,8 +738,6 @@ a {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-/* Botões reutilizáveis */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -780,8 +772,6 @@ a {
     border-color: var(--text-primary);
     transform: translateY(-2px);
 }
-
-/* Seção de projetos */
 .projects {
     padding: 2rem;
     margin-bottom: 2rem;

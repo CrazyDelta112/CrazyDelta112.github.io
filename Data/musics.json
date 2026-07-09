@@ -1,0 +1,92 @@
+[
+   {
+      "id":"mw2",
+      "series":"Modern Warfare Series",
+      "title":"Modern Warfare 2",
+      "composer":"Hans Zimmer, Lorne Balfe",
+      "year":"2009",
+      "cover":"/Assets/Images/Musics/IW4.jpg",
+      "tracks":[
+         {
+            "name":"Opening Credits",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-2/hrqbkuup/02%20Opening%20Credits.mp3"
+         },
+         {
+            "name":"Main Menu",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-2/oankniag/03%20Main%20Menu.mp3"
+         },
+         {
+            "name":"Spec Ops Menu",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-2/edemunek/04%20Spec%20Ops%20Menu.mp3"
+         },
+         {
+            "name":"S.S.D.D",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-2/niaewvma/05%20Same%20Shit%2C%20Different%20Day.mp3"
+         },
+         {
+            "name":"Plan B",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-2/mrzvfnao/09%20Plan%20B.mp3"
+         }
+      ]
+   },
+   {
+      "id":"mw3",
+      "series":"Modern Warfare Series",
+      "title":"Modern Warfare 3",
+      "composer":"Brian Tyler",
+      "year":"2011",
+      "cover":"/Assets/Images/Musics/IW5.jpg",
+      "tracks":[
+         {
+            "name":"Call of Duty - MW3",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-3/kusgahmm/01.%20Call%20of%20Duty%20-%20MW3.mp3"
+         },
+         {
+            "name":"Russian Warfare",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-3/zlijtsfy/02%20-%20Russian%20Warfare.mp3"
+         },
+         {
+            "name":"Prague Hostilities",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-3/eyebskxi/03%20-%20Prague%20Hostilities.mp3"
+         },
+         {
+            "name":"Special Forces",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-3/riqggocs/09%20-%20Special%20Forces.mp3"
+         },
+         {
+            "name":"End Credits",
+            "src":"https://lambda.vgmtreasurechest.com/soundtracks/call-of-duty-modern-warfare-3/vzosaveh/20%20-%20MW3%20End%20Credits.mp3"
+         }
+      ]
+   },
+   {
+      "id":"mwiii",
+      "series":"Modern Warfare Series",
+      "title":"Modern Warfare III",
+      "composer":"Walter Mair",
+      "year":"2023",
+      "cover":"/Assets/Images/Musics/JUP.jpg",
+      "tracks":[
+         {
+            "name":"Modern Warfare III",
+            "src":"/Assets/Music/JUP/Modern Warfare III.mp3"
+         },
+         {
+            "name":"Operation 627",
+            "src":"/Assets/Music/JUP/Operation 627.mp3"
+         },
+         {
+            "name":"Reactor",
+            "src":"/Assets/Music/JUP/Reactor.mp3"
+         },
+         {
+            "name":"Together As One",
+            "src":"/Assets/Music/JUP/Together As One.mp3"
+         },
+         {
+            "name":"The Best of Us",
+            "src":"/Assets/Music/JUP/The Best of Us.mp3"
+         }
+      ]
+   }
+]

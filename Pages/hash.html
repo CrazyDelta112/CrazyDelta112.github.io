@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hash any dvar name to 64-bit hex for GSC or console commands in MWII, MWIII, BO6 and BO7.">
+  <title>NovaSix | Dvar Hasher</title>
+  <link rel="icon" type="image/png" href="/Assets/Images/Favicon.png">
+  <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/hash.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="background-blur"><img class="bg-full" alt=""></div>
+  <div class="container">
+    <main class="content">
+      <div class="hasher-header">
+        <h1>Dvar Hasher</h1>
+        <p>Convert any dvar for GSC or console commands</p>
+      </div>
+      <div class="hasher-container glass">
+        <div class="input-group">
+          <label><i class="fas fa-terminal"></i> Dvar name</label>
+          <input type="text" id="dvarInput" class="input-field" placeholder="Add dvar/command here" autocomplete="off">
+        </div>
+        <button id="hashBtn" class="hash-btn"><i class="fas fa-calculator"></i> Generate hash</button>
+        <div id="resultArea" class="result-area" style="display: none;">
+          <div class="result-label">64-bit hash (hex)</div>
+          <div id="hashResult" class="hash-value"></div>
+          <div class="result-label" style="margin-top: 0.5rem;">For cbuf / console</div>
+          <div id="cbufResult" class="hash-value"></div>
+          <div style="text-align: right;">
+            <button id="copyHashBtn" class="copy-btn"><i class="fas fa-copy"></i> Copy hash</button>
+            <button id="copyCbufBtn" class="copy-btn" style="margin-left: 0.5rem;"><i class="fas fa-copy"></i> Copy cbuf</button>
+          </div>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-info-circle"></i> You can use these dvars in <strong>MWII, MWIII, BO6 & BO7</strong>.<br>
+        </div>
+      </div>
+      <div id="recentHashes" class="recent-hashes glass">
+        <div class="recent-header">
+          <h3><i class="fas fa-history"></i> Recent hashes</h3>
+          <button id="clearRecentBtn" class="clear-btn"><i class="fas fa-trash-alt"></i> Clear</button>
+        </div>
+        <div id="recentList" class="recent-list">
+          <p class="empty-recent">No recent hashes yet.</p>
+        </div>
+      </div>
+      <div class="credits-line">
+        <i class="fas fa-code-branch"></i> Original code by <a href="https://github.com/PipesCantCode" target="_blank" rel="noopener noreferrer">TotallyNotPipes (PipesCantCode)</a>
+      </div>
+      <div class="footer-container">
+        <img class="footer-logo" src="/Assets/Images/Logo.png" alt="NovaSix">
+        <div class="footer-brand"><p>the central hub of the Call of Duty community</p></div>
+        <div class="footer-stores">
+          <a href="https://discord.gg/6zuVkCY7xq" class="store-link" target="_blank">Discord</a>
+          <a href="/about.html" class="store-link">About</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/JS/Main.js" defer></script>
+  <script src="/JS/Hash.js"></script>
+</body>
+</html>

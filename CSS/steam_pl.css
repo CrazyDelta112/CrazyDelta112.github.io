@@ -1,0 +1,135 @@
+.test-header {
+      text-align: center;
+      margin: 2rem 0 2.5rem;
+    }
+    .test-header h1 {
+      font-family: 'HTCD', var(--font-main);
+      font-size: 2.8rem;
+      background: linear-gradient(135deg, #fff, #aaa);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .test-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .player-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 8px;
+      padding: 1.2rem;
+      transition: transform 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .player-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-primary);
+    }
+
+    .player-card .game-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      object-fit: cover;
+      margin-bottom: 0.5rem;
+      background: #0a0a0a;
+    }
+
+    .player-card .game-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .player-card .game-id {
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      margin-bottom: 0.5rem;
+    }
+
+    .player-count {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent-primary);
+      margin: 0.5rem 0;
+    }
+
+    .player-count.loading {
+      color: var(--text-tertiary);
+      font-size: 1rem;
+    }
+
+    .player-count .label {
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      display: block;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 0.4rem;
+    }
+    .status-dot.online { background: #00ff00; }
+    .status-dot.offline { background: #ff3333; }
+    .status-dot.unknown { background: #ffaa00; }
+
+    .last-updated {
+      font-size: 0.65rem;
+      color: var(--text-tertiary);
+      margin-top: 0.5rem;
+      text-align: right;
+      border-top: 1px solid var(--glass-border);
+      padding-top: 0.5rem;
+    }
+
+    .refresh-btn {
+      background: var(--accent-primary);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      margin: 1rem 0;
+    }
+    .refresh-btn:hover {
+      opacity: 0.8;
+    }
+
+    .total-players {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      padding: 1rem;
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .total-players strong {
+      color: var(--accent-primary);
+    }
+
+    .error-box {
+      background: rgba(255,51,51,0.15);
+      border: 1px solid rgba(255,51,51,0.3);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      color: #ff6b6b;
+      margin: 1rem 0;
+    }

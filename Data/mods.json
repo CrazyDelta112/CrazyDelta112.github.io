@@ -1,0 +1,231 @@
+{
+   "mods":[
+      {
+         "id":"lumen",
+         "status":"dev",
+         "title":"Lumen",
+         "description":"Lumen is a project that lets you play various modern Call of Duty titles like Warzone 1, Cold War, Vanguard, and MWIII Warzone over a LAN connection with friends.",
+         "version":"Not Available",
+         "date":"Not Available",
+         "links":[
+            {
+               "name":"Discord",
+               "url":"https://discord.gg/xcKbMnBRSx"
+            }
+         ],
+         "image":"/Assets/Images/Mods/Lumen.png"
+      },
+      {
+         "id":"s4-mod",
+         "status":"online",
+         "title":"S4-Mod",
+         "description":"S4-Mod allows you to play various versions of Call of Duty: Vanguard over a LAN connection with other players. Includes server browser support.",
+         "version":"1.0.0",
+         "date":"2025/12/01",
+         "links":[
+            {
+               "name":"Discord",
+               "url":"https://discord.gg/WVSErUvBbj"
+            }
+         ],
+         "image":"/Assets/Images/Mods/S4-Mod.png"
+      },
+      {
+         "id":"iw8m",
+         "status":"online",
+         "title":"IW8-Mod",
+         "description":"IW8-Mod is a preservation project that allows you to play various old and new versions of Call of Duty: Modern Warfare and Warzone 1 with friends over a LAN connection.",
+         "version":"3.0.0",
+         "date":"2025/08/08",
+         "links":[
+            {
+               "name":"Discord",
+               "url":"https://discord.gg/WVSErUvBbj"
+            },
+            {
+               "name":"Docs",
+               "url":"https://iw8.dev/"
+            }
+         ],
+         "image":"/Assets/Images/Mods/IW8-Mod.png"
+      },
+      {
+         "id":"bo4",
+         "status":"online",
+         "title":"Project-BO4 Shield",
+         "description":"A very experimental modification platform for Call of Duty®: Black Ops 4 run by the community, aiming at improving both functionality and performance of the original game.",
+         "version":null,
+         "date":null,
+         "links":[
+            {
+               "name":"GitHub",
+               "url":"https://github.com/NotNierPea/shield-launcher"
+            }
+         ],
+         "image":"/Assets/Images/Mods/BO4.png"
+      },
+      {
+         "id":"hmw",
+         "status":"online",
+         "title":"HMW",
+         "description":"This Mod Allow You To Play MW2/MW3 Remastered Using Cod4-Remastered , and revive old times!",
+         "version": "1.6.7",
+         "date":null,
+         "links":[
+            {
+               "name":"Discord",
+               "url":"https://discord.com/invite/horizonmw"
+            }
+         ],
+         "image":"/Assets/Images/Mods/HMW.png"
+      },
+      {
+         "id":"h2-mod",
+         "status":"online",
+         "title":"H2-Mod",
+         "description":"H2-Mod is a client for Call of Duty®: Modern Warfare 2 Campaign Remastered that enables advanced features such as Cbuff and a developer console, along with full modding support. It allows you to customize your experience with mods including Spec Ops, Survival, weapons, scripts, and more.",
+         "version":"3.0.5",
+         "date":"2021/08/28",
+         "links":[
+            {
+               "name":"GitHub",
+               "url":"https://github.com/alicealys/h2-mod"
+            },
+            {
+               "name":"Discord",
+               "url":"https://discord.com/invite/dpnRn2tKT9"
+            }
+         ],
+         "image":"/Assets/Images/Mods/H2-Mod.png"
+      },
+      {
+         "id":"iw7-mod",
+         "status":"online",
+         "title":"IW7-Mod",
+         "description":"IW7-Mod is a client for Call of Duty®: Infinite Warfare that adds dedicated servers, hands-on modding utilities, and custom mods that feature content like weapons, models, sounds, and more.",
+         "version":"1.04",
+         "date":"2026/01/16",
+         "links":[
+            {
+               "name":"GitHub",
+               "url":"https://github.com/auroramod/iw7-mod"
+            },
+            {
+               "name":"Docs",
+               "url":"https://docs.auroramod.dev/iw7-install"
+            }
+         ],
+         "image":"/Assets/Images/Mods/iw7-splash.png"
+      },
+      {
+         "id":"h1-mod",
+         "status":"online",
+         "title":"H1-Mod",
+         "description":"H1-Mod is a modded client for Call of Duty: Modern Warfare Remastered. The client aims to provide a better-than-vanilla experience, with many quality-of-life features added.",
+         "version":"2.03",
+         "date":"2022/06/24",
+         "links":[
+            {
+               "name":"GitHub",
+               "url":"https://github.com/auroramod/h1-mod"
+            },
+            {
+               "name":"Docs",
+               "url":"https://docs.auroramod.dev/"
+            }
+         ],
+         "image":"/Assets/Images/Mods/H1-Mod.png"
+      },
+      {
+         "id":"alterware",
+         "status":"online",
+         "title":"AlterWare (Multiple Games)",
+         "description":"AlterWare is a Client For Black Ops 3, Ghosts, Advanced Warfare, and Modern Warfare 2 SinglePlayer.",
+         "version":null,
+         "date":null,
+         "links":[
+            {
+               "name":"Website",
+               "url":"https://alterware.dev/"
+            },
+            {
+               "name":"Discord",
+               "url":"https://discord.com/invite/2ETE8engZM"
+            }
+         ],
+         "image":"/Assets/Images/Mods/AlterWare.png"
+      },
+      {
+         "id":"plutonium",
+         "status":"online",
+         "title":"Plutonium (Multiple Games)",
+         "description":"Plutonium offers a unique Black Ops 2, Modern Warfare 3 & World at War experience, complete with dedicated servers, mod support, and much more.",
+         "version":"r5314",
+         "date":"2017/10/01",
+         "links":[
+            {
+               "name":"Website",
+               "url":"https://plutonium.pw/"
+            },
+            {
+               "name":"Docs",
+               "url":"https://plutonium.pw/docs/"
+            }
+         ],
+         "image":"/Assets/Images/Mods/Plutonium.png"
+      },
+      {
+         "id":"T6SP-Mod",
+         "status":"online",
+         "title":"T6SP-Mod",
+         "description":"T6SP-Mod is a single-player modification for Call of Duty: Black Ops II.",
+         "version": "1.3.0 Alpha",
+         "date":"2024/05/20",
+         "links":[
+            {
+               "name":"GitHub",
+               "url":"https://github.com/Rattpak/T6SP-Mod-Release"
+            },
+            {
+               "name":"Discord",
+               "url":"https://discord.gg/Wbb5YMZrHG"
+            }
+         ],
+         "image":"/Assets/Images/Mods/T6SP.png"
+      },
+      {
+         "id":"iw4x",
+         "status":"offline",
+         "title":"IW4X",
+         "description":"IW4x is a community-driven modification for Call of Duty Modern Warfare 2 (2009) that enhances the game with improved security, dedicated servers, and extensive modding capabilities.",
+         "version":null,
+         "date":null,
+         "links":[
+            {
+               "name":"Website",
+               "url":"https://iw4x.io/"
+            }
+         ],
+         "image":"/Assets/Images/Mods/IW4X.png"
+      },
+      {
+         "id":"iw3sp",
+         "status":"online",
+         "title":"IW3SP-Mod",
+         "description":"Singleplayer client modification for Call of Duty 4: Modern Warfare (IW3). This client based on the IW4x Client.",
+         "version":"4.1.5",
+         "date":"2024/12/03",
+         "links":[
+            {
+               "name":"GitTea",
+               "url":"https://gitea.com/JerryALT/iw3sp_mod/releases"
+            },
+            {
+               "name":"Discord",
+               "url":"https://discord.com/invite/YzNZSEMAnf"
+            }
+         ],
+         "image":"/Assets/Images/Mods/IW3SP.png"
+      }
+   ]
+}

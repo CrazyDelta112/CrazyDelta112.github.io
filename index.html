@@ -1,53 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="icon" type="image/x-icon" href="Icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="Main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaSix – The central hub for the Call of Duty community: builds, mods, news, tools, and much more..">
+  <meta property="og:image" content="/Assets/Images/MainIcon.png">
+  <title>NovaSix | Home</title>
+  <link rel="icon" type="image/png" href="/Assets/Images/Favicon.png">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="background-blur">
-        <img alt="" class="bg-full" />
-    </div>
-
-    <div class="container">
-        <main class="content">
-            
-            <section class="hero glass">
-                <img src="cat-spinning.gif" alt="Logo" class="hero-logo" />
-                <h1>Welcome to my Github Page</h1>
-                <p class="hero-sub">
-                    Everything that you are seeing here is coming to the next update for NovaSix
-                </p>
-                <div class="hero-buttons">
-                    <a href="Splash.html" class="btn btn-primary">
-                        <i class="fas fa-image"></i> Splash Converter
-                    </a>
-                    <a href="Hash.html" class="btn btn-primary">
-                        <i class="fas fa-calculator"></i> Dvar Hasher
-                    </a>
-                </div>
-            </section>
-
-         
-
-            <section class="discord glass">
-                <h2 style="font-size: 25px">JOIN MY DISCORD SERVER!</h2>
-                <a href="https://discord.gg/VFsxPh96xU" target="_blank" class="discord-btn">
-                    <i class="fab fa-discord"></i> Join Discord
-                </a>
-            </section>
-
-            <footer class="site-footer">
-                <p>Thanks everyone supporting my projects!</p>
-                <p>Thanks Lifix for fixing </p>
-            </footer>
-        </main>
-    </div>
-
-    <script src="Main.js"></script>
+  <div class="background-blur"><img class="bg-full" alt=""></div>
+  <div class="container">
+    <main class="content">
+      <section class="hero-section glass">
+        <img src="/Assets/Images/Logo.png" alt="NovaSix" class="center-logo img">
+        <h1 class="hero-title">Welcome to NovaSix</h1>
+        <p class="hero-subtitle">The ultimate hub for the Call of Duty community – mods, tools, files and more.</p>
+      </section>
+      <div class="featured-grid">
+        <a href="/Pages/storage.html" class="feature-card glass">
+          <i class="fas fa-database"></i>
+          <h3>Asset Depots</h3>
+          <p>Keyarts, loading screens, videos and much more!.</p>
+        </a>
+        <a href="/Pages/files.html" class="feature-card glass">
+          <i class="fas fa-archive"></i>
+          <h3>Files Archive</h3>
+          <p>Dumps, LUA files and more.</p>
+        </a>
+        <a href="/Pages/mods.html" class="feature-card glass">
+          <i class="fas fa-cogs"></i>
+          <h3>Mods & Clients</h3>
+          <p>Discover amazing mods for CoD franchise.</p>
+        </a>
+        <a href="/tools.html" class="feature-card glass">
+          <i class="fas fa-tools"></i>
+          <h3>Tools</h3>
+          <p>Splash converter and dvar hasher</p>
+        </a>
+      </div>
+      <section class="news-carousel glass">
+        <div class="carousel-container">
+          <div class="carousel-slides" id="carouselSlides"></div>
+          <button class="carousel-prev" id="carouselPrev">❮</button>
+          <button class="carousel-next" id="carouselNext">❯</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </section>
+      <section class="quote-section glass">
+        <div id="cod-quote">Loading quote...</div>
+        <div id="cod-quote-meta"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/JS/main.js" defer></script>
+  <script src="/JS/mainmenu.js"></script>
 </body>
 </html>

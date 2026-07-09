@@ -1,0 +1,63 @@
+{
+  "weapons": [
+    {
+      "id": "mcw",
+      "name": "MCW",
+      "game": "mwiii",
+      "class": "Assault Rifle",
+      "thumbnail": "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_ar_acharlie_mp.png",
+      "fullImage": "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_ar_acharlie_mp.png",
+      "stats": {
+        "damage": 34,
+        "fireRate": 750,
+        "range": 45,
+        "mobility": 68,
+        "accuracy": 72,
+        "recoil": 65
+      },
+      "exclusiveAttachments": [
+        { "name": "MCW Cyclone Barrel", "icon": "/Assets/Images/Attachments/barrel_mcw.png" },
+        { "name": "MCW Crown Breaker Muzzle", "icon": "/Assets/Images/Attachments/muzzle_mcw.png" },
+        { "name": "MCW Marksman Stock", "icon": "/Assets/Images/Attachments/stock_mcw.png" }
+      ],
+      "gallery": [
+        "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_ar_acharlie_mp.png",
+        "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_ar_acharlie_mp.png",
+        "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_ar_acharlie_mp.png"
+      ],
+      "videoUrl": "https://res.cloudinary.com/drjufbmv5/video/upload/v1779457980/Call_of_Duty_Modern_Warfare_3_2023_2026.05.22_-_10.52.32.02_p4iotz.mp4",
+      "videoPoster": "/Assets/Images/Weapons/mcw_poster.jpg",
+      "description": "The MCW is a versatile assault rifle with excellent accuracy and moderate recoil, suitable for medium to long-range engagements. It features a high rate of fire and reliable damage output.",
+      "unlockInfo": "Unlocked at Level 25 or via Armory Unlock challenge."
+    },
+    {
+      "id": "riv9",
+      "name": "Rival-9",
+      "game": "mwiii",
+      "class": "SMG",
+      "thumbnail": "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_smg_acharlie_mp.jpg",
+      "fullImage": "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_smg_acharlie_mp.png",
+      "stats": {
+        "damage": 28,
+        "fireRate": 900,
+        "range": 22,
+        "mobility": 85,
+        "accuracy": 55,
+        "recoil": 48
+      },
+      "exclusiveAttachments": [
+        { "name": "Rival-9 Light Barrel", "icon": "/Assets/Images/Attachments/barrel_rival.png" },
+        { "name": "Rival-9 Flash Hider", "icon": "/Assets/Images/Attachments/muzzle_rival.png" },
+        { "name": "Rival-9 Compact Stock", "icon": "/Assets/Images/Attachments/stock_rival.png" }
+      ],
+      "gallery": [
+        "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_smg_acharlie_mp.png",
+        "/Assets/Images/Weapons/hud_icon_weapon_jup_jp19_smg_acharlie_mp.png"
+      ],
+      "videoUrl": "/Assets/Videos/Weapons/rival_preview.mp4",
+      "videoPoster": "/Assets/Images/Weapons/rival_poster.jpg",
+      "description": "The Rival-9 is a high-fire-rate SMG excelling at close quarters, with great mobility but moderate recoil. Perfect for aggressive playstyles.",
+      "unlockInfo": "Unlocked via Battle Pass Season 1 Sector A7 or Store Bundle."
+    }
+  ]
+}

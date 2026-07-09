@@ -1,0 +1,292 @@
+.music-header {
+  text-align: center;
+  margin: 2rem 0 3rem;
+}
+.music-header h1 {
+  font-family: 'HTCD', var(--font-main);
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, #fff, #aaa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.music-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+}
+
+.music-section {
+  margin-bottom: 4rem;
+}
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--accent-primary);
+  padding-left: 1rem;
+}
+.albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+.music-card {
+  display: flex;
+  flex-direction: row;
+  background: rgba(34, 34, 34, 0.9);          /* substituto de --glass-bg */
+  /* backdrop-filter removido */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* substituto de --glass-border */
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.music-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--text-primary);
+}
+.album-cover {
+  width: 160px;
+  min-width: 160px;
+  height: 160px;
+  position: relative;
+  background: #111;
+}
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.play-overlay i {
+  font-size: 3rem;
+  color: #fff;
+  filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+.album-cover:hover .play-overlay {
+  opacity: 1;
+}
+.album-info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.album-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+.composer {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+.year {
+  color: var(--text-tertiary);
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.tracklist {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-bottom: 0.5rem;
+}
+.tracklist.expanded {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.track {
+  padding: 0.3rem 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* vidro substituído */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s;
+}
+.track:hover {
+  color: var(--text-primary);
+}
+.track::before {
+  content: '♪';
+  opacity: 0.6;
+}
+.track.playing {
+  color: var(--accent-primary);
+}
+.track.playing::before {
+  content: '▶';
+}
+.toggle-tracklist {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* vidro substituído */
+  color: var(--text-secondary);
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: fit-content;
+  transition: background 0.2s, color 0.2s;
+}
+.toggle-tracklist:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--text-primary);
+}
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 380px;
+  background: rgba(34, 34, 34, 0.95);         /* substituto sólido */
+  /* backdrop-filter removido */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 0.8rem 1.2rem;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);     /* sombra fixa no lugar de --glass-shadow */
+  transition: all 0.3s ease;
+}
+.music-player.collapsed {
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+}
+.music-player.collapsed .player-content {
+  display: none;
+}
+.toggle-player-btn {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 30, 0.95);          /* mesmo fundo do player */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  width: 30px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background 0.2s, color 0.2s;
+  z-index: 1001;
+}
+.toggle-player-btn:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--text-primary);
+}
+.player-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.player-info {
+  text-align: center;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+.progress-bar {
+  flex: 1;
+  height: 5px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+  cursor: pointer;
+}
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--accent-primary);
+  border-radius: 3px;
+}
+.player-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.player-controls button {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);  /* vidro substituído */
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.player-controls button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+#playBtn, #pauseBtn {
+  background: var(--accent-primary);
+  color: #000;
+}
+.volume-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+}
+#volumeSlider {
+  width: 100px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+#volumeSlider::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+@media (max-width: 600px) {
+  .music-player {
+    width: 95%;
+    padding: 0.6rem 1rem;
+  }
+  .player-controls button {
+    width: 32px;
+    height: 32px;
+  }
+  .albums-grid {
+    grid-template-columns: 1fr;
+  }
+  .music-card {
+    flex-direction: column;
+  }
+  .album-cover {
+    width: 100%;
+    height: 180px;
+  }
+}

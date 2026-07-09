@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NovaSix | Soundtracks</title>
+  <meta name="description" content="Discover the iconic soundtracks from the Call of Duty franchise." />
+  <link rel="icon" type="image/png" href="/Assets/Images/Favicon.png">
+  <link rel="stylesheet" href="/CSS/main.css">
+  <link rel="stylesheet" href="/CSS/mainmenu.css">
+  <link rel="stylesheet" href="/CSS/musics.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="background-blur">
+    <img alt="" class="bg-full">
+  </div>
+  <div class="container">
+    <main class="content">
+      <header class="music-header">
+        <h1>SOUNDTRACKS</h1>
+        <p class="subtitle">The epic songs that defined the Call of Duty franchise</p>
+      </header>
+
+      <div id="albumsContainer" class="music-section"></div>
+
+      <div class="music-player glass" id="musicPlayer" style="display: flex;">
+        <button id="togglePlayerBtn" class="toggle-player-btn"><i class="fas fa-chevron-down"></i></button>
+        <div class="player-content">
+          <div class="player-info">
+            <span id="currentTrack">No track selected</span>
+          </div>
+          <div class="progress-container">
+            <span id="currentTime">0:00</span>
+            <div class="progress-bar" id="progressBar">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span id="durationTime">0:00</span>
+          </div>
+          <div class="player-controls">
+            <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+            <button id="playBtn"><i class="fas fa-play"></i></button>
+            <button id="pauseBtn"><i class="fas fa-pause"></i></button>
+            <button id="stopBtn"><i class="fas fa-stop"></i></button>
+            <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+          </div>
+          <div class="volume-container">
+            <i class="fas fa-volume-up" id="volumeIcon"></i>
+            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+          </div>
+          <audio id="audioPlayer" src=""></audio>
+        </div>
+      </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/JS/main.js" defer></script>
+  <script src="/JS/musics.js"></script>
+</body>
+</html>

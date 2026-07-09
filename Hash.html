@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Dvar Hasher</title>
+      <link rel="icon" type="image/png" href="Icon.png">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      <link rel="stylesheet" href="/Hash.css">
+      <link rel="stylesheet" href="/Main.css">
+      <link rel="stylesheet" href="/Navbar.css">
+      <link rel="stylesheet" href="/Splash.css">
+   </head>
+   <body>
+      <div class="background-blur"><img class="bg-full" alt=""></div>
+      <div class="container">
+         <main class="content">
+            <div class="hasher-header">
+               <h1>Dvar Hasher</h1>
+               <p>Convert any  dvar  for GSC or console commands</p>
+            </div>
+            <div class="hasher-container glass">
+               <div class="input-group">
+                  <label><i class="fas fa-terminal"></i> Dvar name</label>
+                  <input type="text" id="dvarInput" class="input-field" placeholder="Add dvar/command here" autocomplete="off">
+               </div>
+               <button id="hashBtn" class="hash-btn"><i class="fas fa-calculator"></i> Generate hash</button>
+               <div id="resultArea" class="result-area" style="display: none;">
+                  <div class="result-label">64-bit hash (hex)</div>
+                  <div id="hashResult" class="hash-value"></div>
+                  <div class="result-label" style="margin-top: 0.5rem;">For cbuf / console</div>
+                  <div id="cbufResult" class="hash-value"></div>
+                  <div style="text-align: right;">
+                     <button id="copyHashBtn" class="copy-btn"><i class="fas fa-copy"></i> Copy hash</button>
+                     <button id="copyCbufBtn" class="copy-btn" style="margin-left: 0.5rem;"><i class="fas fa-copy"></i> Copy cbuf</button>
+                  </div>
+               </div>
+               <div class="info-box">
+                  <i class="fas fa-info-circle"></i> You can use these dvars in <strong>MWII, MWIII, BO6 & BO7</strong>.<br>
+                  <span id="example1" class="example">cg_fovScale</span> → <code>0x682a9bc40f96ca4a</code><br>
+               </div>
+            </div>
+            <div id="recentHashes" class="recent-hashes glass">
+               <div class="recent-header">
+                  <h3><i class="fas fa-history"></i> Recent hashes</h3>
+                  <button id="clearRecentBtn" class="clear-btn"><i class="fas fa-trash-alt"></i> Clear</button>
+               </div>
+               <div id="recentList" class="recent-list">
+                  <p class="empty-recent">No recent hashes yet.</p>
+               </div>
+            </div>
+            <div class="credits-line">
+               <i class="fas fa-code-branch"></i> Original code by <a href="https://github.com/PipesCantCode" target="_blank" rel="noopener noreferrer">TotallyNotPipes (PipesCantCode)</a>
+            </div>
+            <br>
+            <h1 style="text-align: center; font-size: 24px">
+          Other Community Projects
+        </h1>
+            <div class="ads-section">
+               <div class="ad-bar glass">
+                  <a
+                     href="https://atu-atlas.github.io/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >
+                  <img
+                     src="News_1.png"
+                     />
+                  </a>
+               </div>
+               <div class="ad-bar glass">
+                  <a
+                     href="https://novasix.org"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     >
+                  <img
+                     src="News_2.png"
+                     />
+                  </a>
+               </div>
+            </div>
+            <br>
+            <h1 style="text-align: center; font-size: 14px;color: gray">Website Made By Delta</h1>
+         </main>
+      </div>
+      </main>
+      </div>
+      <script src="Main.js"></script>
+   </body>
+</html>
